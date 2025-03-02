@@ -36,3 +36,21 @@ opt.termguicolors = true
 opt.signcolumn = "yes"
 vim.cmd[[colorscheme catppuccin]]
 vim.cmd[[hi Cursor guifg=white guibg=white]]
+local function copy(text)
+    local encoded = vim.fn.system("base64", text):gsub("\n", "")
+    local osc52_seq = "\27]52;c;" .. encoded .. "\7"
+    io.stdout:write(osc52_seq)
+    io.stdout:flush()
+end
+
+vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+        ["+"] = copy,
+        ["*"] = copy,
+    },
+    paste = {
+        ["+"] = "pbpaste",
+        ["*"] = "pbpaste",
+    },
+}
