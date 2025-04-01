@@ -13,9 +13,12 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ---------- 正常模式 ---------- ---
 -- 窗口
-keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口 
-keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "<cmd>h", "<C-w>v") -- 水平新增窗口 
+keymap.set("n", "<cmd>v", "<C-w>s") -- 垂直新增窗口
 keymap.set("n", " ", ":")
+keymap.set("n", "mm", "gd")
+keymap.set("n", "ff", "gf")
+keymap.set("n", "rr", "<C-o>")
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
