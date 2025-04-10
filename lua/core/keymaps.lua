@@ -30,3 +30,8 @@ keymap.set("n", "<C-H>", ":bprevious<CR>")
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+--copyright
+local copyright = require("core.copyright")
+
+vim.keymap.set("n", "ccpp", copyright.add_copyright, { desc = "Add copyright notice" })

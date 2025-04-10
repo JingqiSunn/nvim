@@ -9,11 +9,11 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-  -- 确保安装，根据需要填写
   ensure_installed = {
     "lua_ls",
     "jdtls",
     "pyright",
+    "verible",
   },
 })
 
@@ -44,4 +44,10 @@ require("lspconfig").pyright.setup({
       pythonPath = "/opt/homebrew/bin/python3",  -- Specify your Python path, especially if you're using a virtualenv
     },
   },
+})
+
+require("lspconfig").verible.setup({
+  capabilities = capabilities,
+  cmd = { "verible-verilog-ls" },
+  filetypes = { "verilog", "systemverilog" },
 })
