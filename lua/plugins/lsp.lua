@@ -14,6 +14,8 @@ require("mason-lspconfig").setup({
     "jdtls",
     "pyright",
     "verible",
+    "html",
+    "ts_ls",
   },
 })
 
@@ -50,4 +52,17 @@ require("lspconfig").verible.setup({
   capabilities = capabilities,
   cmd = { "verible-verilog-ls" },
   filetypes = { "verilog", "systemverilog" },
+})
+
+require("lspconfig").html.setup({
+  capabilities = capabilities,
+  filetypes = { "html", "javascriptreact", "typescriptreact" },
+})
+
+-- Setup for HDL hdl_checker
+-- Make sure to adjust the command and filetypes as per your requirements
+require("lspconfig").hdl_checker.setup({
+  capabilities = capabilities,
+  cmd = { "hdl_checker" },
+  filetypes = { "verilog" },
 })
