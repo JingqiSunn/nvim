@@ -60,3 +60,5 @@ git pull origin Lab-version
 ```
 
 The automatic installation should be available when you open NVIM for the first time. If you encounter any issues, please raise them in the issues section of the repository.
+
+##### WE DON'T ACCEPT ANY KIND OF PULL REQUEST!!!!!!!
