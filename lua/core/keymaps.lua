@@ -35,3 +35,13 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 local copyright = require("core.copyright")
 
 vim.keymap.set("n", "ccpp", copyright.add_copyright, { desc = "Add copyright notice" })
+
+vim.keymap.set("n", "aa", function()
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd("cclose")
+      return
+    end
+  end
+  vim.cmd("copen")
+end, { desc = "Toggle Quickfix" })
