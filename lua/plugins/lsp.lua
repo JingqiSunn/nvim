@@ -51,3 +51,14 @@ require("lspconfig").verible.setup({
   cmd = { "verible-verilog-ls" },
   filetypes = { "verilog", "systemverilog" },
 })
+
+require("lspconfig").rust_analyzer.setup({
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = { allFeatures = true },
+      checkOnSave = { command = "clippy" },
+      procMacro = { enable = true },
+    },
+  },
+})
