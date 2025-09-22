@@ -1,3 +1,11 @@
+local old_notify = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match("The `require%('lspconfig'%).+is deprecated") then
+    return
+  end
+  old_notify(msg, ...)
+end
+
 require("mason").setup({
   ui = {
       icons = {
