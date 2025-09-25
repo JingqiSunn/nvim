@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/Users/sjq/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-osc52"] = {
+    loaded = true,
+    path = "/Users/sjq/.local/share/nvim/site/pack/packer/start/nvim-osc52",
+    url = "https://github.com/ojroques/nvim-osc52"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/sjq/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

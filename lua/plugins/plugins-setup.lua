@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }  -- 状态栏图标
   }
   use 'nvim-tree/nvim-tree.lua'
+  use "ojroques/nvim-osc52"
   use "christoomey/vim-tmux-navigator" -- 用ctl-hjkl来定位窗口
   use "nvim-treesitter/nvim-treesitter" -- 语法高亮
   use "p00f/nvim-ts-rainbow" -- 配合treesitter，不同括号颜色区分
