@@ -51,7 +51,10 @@ return require('packer').startup(function(use)
     commit = "8e8fd432f05b126a9dd1635e8022c7e7d1a04e60"
   }
   use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-nvim-lsp"
+  use {
+    "hrsh7th/cmp-nvim-lsp",
+    commit = "99290b3ec1322070bcfb9e846450a46f6efa50f0"
+  }
   use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
