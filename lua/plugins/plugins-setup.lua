@@ -55,7 +55,10 @@ return require('packer').startup(function(use)
   use "windwp/nvim-autopairs" -- 自动补全括号
 
   use "akinsho/bufferline.nvim" -- buffer分割线
-  use "github/copilot.vim"
+  use {
+    "github/copilot.vim",
+    commit = "cd7f01009fb7b30e22840cadc4faad88b05c6eef"
+}
   use "lewis6991/gitsigns.nvim" -- 左则git提示
   use {"akinsho/toggleterm.nvim", tag = "*"}
   use {
