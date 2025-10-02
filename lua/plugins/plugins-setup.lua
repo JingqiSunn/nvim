@@ -38,8 +38,14 @@ return require('packer').startup(function(use)
     run = ":TSUpdate"
   }
   use "p00f/nvim-ts-rainbow" -- 配合treesitter，不同括号颜色区分
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  use {
+    "williamboman/mason.nvim",
+    commit = "fc98833b6da5de5a9c5b1446ac541577059555be"
+  }
+  use {
+    "williamboman/mason-lspconfig.nvim",
+    commit = "1a31f824b9cd5bc6f342fc29e9a53b60d74af245"
+  }
   use {
     "neovim/nvim-lspconfig",
     commit = "8e8fd432f05b126a9dd1635e8022c7e7d1a04e60"
@@ -58,7 +64,7 @@ return require('packer').startup(function(use)
   use {
     "github/copilot.vim",
     commit = "cd7f01009fb7b30e22840cadc4faad88b05c6eef"
-}
+  }
   use "lewis6991/gitsigns.nvim" -- 左则git提示
   use {"akinsho/toggleterm.nvim", tag = "*"}
   use {
