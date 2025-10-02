@@ -32,14 +32,18 @@ return require('packer').startup(function(use)
   }
   use 'nvim-tree/nvim-tree.lua'
   use "christoomey/vim-tmux-navigator" -- 用ctl-hjkl来定位窗口
-  use "nvim-treesitter/nvim-treesitter" -- 语法高亮
-  use "p00f/nvim-ts-rainbow" -- 配合treesitter，不同括号颜色区分
   use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",  -- 这个相当于mason.nvim和lspconfig的桥梁
-    "neovim/nvim-lspconfig"
+    "nvim-treesitter/nvim-treesitter",
+    commit = "845356a256ed6ff5868da582cb62a31d762e1804",
+    run = ":TSUpdate"
   }
-    -- 自动补全
+  use "p00f/nvim-ts-rainbow" -- 配合treesitter，不同括号颜色区分
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use {
+    "neovim/nvim-lspconfig",
+    commit = "8e8fd432f05b126a9dd1635e8022c7e7d1a04e60"
+  }
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
