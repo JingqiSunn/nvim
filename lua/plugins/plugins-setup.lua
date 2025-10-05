@@ -23,21 +23,37 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  --use 'folke/tokyonight.nvim' -- 主题
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    'wbthomason/packer.nvim',
+    commit = "ea0cc3c59f67c440c5ff0bbe4fb9420f4350b9a3"
+  }
+  use { 
+    "catppuccin/nvim", 
+    as = "catppuccin", 
+    commit = "c89184526212e04feffbddda9d06b041a8fca416"
+  }
   use {
     'nvim-lualine/lualine.nvim',  -- 状态栏
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }  -- 状态栏图标
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    commit = "b8c23159c0161f4b89196f74ee3a6d02cdc3a955"
   }
-  use 'nvim-tree/nvim-tree.lua'
-  use "christoomey/vim-tmux-navigator" -- 用ctl-hjkl来定位窗口
+  use {
+    'nvim-tree/nvim-tree.lua',
+    commit = "87d096a39cb2d5d43e6771563575ff042a79f48b"
+  }
+  use {
+    "christoomey/vim-tmux-navigator", -- 用ctl-hjkl来定位窗口
+    commit = "c45243dc1f32ac6bcf6068e5300f3b2b237e576a"
+  }
   use {
     "nvim-treesitter/nvim-treesitter",
     commit = "845356a256ed6ff5868da582cb62a31d762e1804",
     run = ":TSUpdate"
   }
-  use "p00f/nvim-ts-rainbow" -- 配合treesitter，不同括号颜色区分
+  use {
+    "p00f/nvim-ts-rainbow", -- 配合treesitter，不同括号颜色区分
+    commit = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9"
+  }
   use {
     "williamboman/mason.nvim",
     commit = "fc98833b6da5de5a9c5b1446ac541577059555be"
@@ -50,29 +66,60 @@ return require('packer').startup(function(use)
     "neovim/nvim-lspconfig",
     commit = "8e8fd432f05b126a9dd1635e8022c7e7d1a04e60"
   }
-  use "hrsh7th/nvim-cmp"
+  use {
+    "hrsh7th/nvim-cmp",
+    commit = "b5311ab3ed9c846b585c0c15b7559be131ec4be9"
+  }
   use {
     "hrsh7th/cmp-nvim-lsp",
     commit = "99290b3ec1322070bcfb9e846450a46f6efa50f0"
   }
-  use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
-  use "saadparwaiz1/cmp_luasnip"
-  use "rafamadriz/friendly-snippets"
-  use "hrsh7th/cmp-path" -- 文件路径
-
-  use "numToStr/Comment.nvim" -- gcc和gc注释
-  use "windwp/nvim-autopairs" -- 自动补全括号
-
-  use "akinsho/bufferline.nvim" -- buffer分割线
+  use {
+    "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
+    commit = "73813308abc2eaeff2bc0d3f2f79270c491be9d7"
+  }
+  use {
+    "saadparwaiz1/cmp_luasnip",
+    commit = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
+  }
+  use {
+    "rafamadriz/friendly-snippets",
+    commit = "572f5660cf05f8cd8834e096d7b4c921ba18e175"
+  }
+  use {
+    "hrsh7th/cmp-path", -- 文件路径
+    commit = "c642487086dbd9a93160e1679a1327be111cbc25"
+  }
+  use {
+    "numToStr/Comment.nvim", -- gcc和gc注释
+    commit = "e30b7f2008e52442154b66f7c519bfd2f1e32acb"
+  }
+  use {
+    "windwp/nvim-autopairs", -- 自动补全括号
+    commit = "23320e75953ac82e559c610bec5a90d9c6dfa743"
+  }
+  use {
+    "akinsho/bufferline.nvim", -- buffer分割线
+    commit = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3"
+  }
   use {
     "github/copilot.vim",
     commit = "cd7f01009fb7b30e22840cadc4faad88b05c6eef"
   }
-  use "lewis6991/gitsigns.nvim" -- 左则git提示
-  use {"akinsho/toggleterm.nvim", tag = "*"}
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',  -- 文件检索
-    requires = { {'nvim-lua/plenary.nvim'} }
+    "lewis6991/gitsigns.nvim", -- 左则git提示
+    commit = "1ee5c1fd068c81f9dd06483e639c2aa4587dc197"
+  }
+  use {
+    "akinsho/toggleterm.nvim", 
+    tag = "*",
+    commit = "50ea089fc548917cc3cc16b46a8211833b9e3c7c"
+  }
+  use {
+    'nvim-telescope/telescope.nvim', 
+    tag = '0.1.1',  -- 文件检索
+    requires = { {'nvim-lua/plenary.nvim', commit = "b9fd5226c2f76c951fc8ed5923d85e4de065e509"} },
+    commit = "c1a2af0af69e80e14e6b226d3957a064cd080805"
   }
 
   if packer_bootstrap then
